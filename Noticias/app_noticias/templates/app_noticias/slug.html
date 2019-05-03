@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Noticias com o slug</title>
+</head>
+<body>
+    <h2>Exibindo noticias da tag:</h2><hr>
+    {% for noticia in noticias %}
+    
+        {% for tagn in noticia.tags.all %}
+        
+            {% if tagn.slug == tag %}
+                <h2>{{noticia.titulo}}<h2>
+            {% endif %}
+
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>

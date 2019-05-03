@@ -1,0 +1,20 @@
+
+<h1><center> Notícias </h1>
+{% for noticia in object_list%}
+{% if noticia.publicado %}
+    <div>
+        <h2>{{noticia.titulo}}</h2>
+        <p>{{ noticia.conteudo | linebreaksbr }}</p>
+        <p><b>Autor: {{noticia.autor.nome | linebreaksbr }}</b></p>
+        {% if noticia.data_publicacao %}
+            <p>Data de publicação: {{noticia.data_publicacao}}
+        {% endif %}
+        <p> Tags:</p>
+        {% for tag in noticia.tags.all %}
+            <li>{{ tag | linebreaksbr}}</li>
+        {% endfor %}
+        <br>
+    </div>
+{% endif %}
+{% endfor %}
+

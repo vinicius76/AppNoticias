@@ -1,0 +1,24 @@
+
+<html>
+    <head>
+        <title>{{ noticia }}</title>
+    </head>
+    <body>
+        <div>
+            <h2>Exibindo Noticia:</h2><hr>
+            <p>
+                Tags:
+                {% for tag in noticia.tags.all %}
+                    <a href="{% url 'slug' tag.slug %}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+            <h1>{{ noticia }}</h1>
+            <p>{{ noticia.conteudo | linebreaksbr }}</p>
+            <br>
+            <hr>
+        </div>
+        <footer>
+            <a href="{% url 'home' %}" style="float:left"> << Página Inicial</a>
+        </footer>
+    </body>    
+</html>
