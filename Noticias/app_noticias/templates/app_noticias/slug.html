@@ -7,6 +7,29 @@
     <title>Noticias com o slug</title>
 </head>
 <body>
+    <h1>Exibindo noticias da tag com o slug: "{{ tag }}"</h1><hr>
+    {% for noticia in noticias %}
+        <p>
+        <div><b>Título:</b>{{noticia.titulo}}</div>
+        <div><b>Autor: </b>{{ noticia.autor.nome}}</div>
+        <div><b>Data de publicação: </b>{{ noticia.data_publicacao}}</div>
+        </p>
+       
+    {% endfor %}
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Noticias com o slug</title>
+</head>
+<body>
     <h2>Exibindo noticias da tag:</h2><hr>
     {% for noticia in noticias %}
     
@@ -20,3 +43,4 @@
     {% endfor %}
 </body>
 </html>
+-->

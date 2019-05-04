@@ -9,12 +9,7 @@ urlpatterns = [
     path('noticias/resumo/', noticias_resumo, name='resumo'),
     path('noticias/resumo2/', noticias_resumo_template, name='resumo2'),
     path('noticias/tag/<str:pk>', slug_view, name='slug'),
+    path('contato',ContatoView.as_view(),name='contato'),
+    path('contato/sucesso',ContatoSucessoView.as_view(),name='contato_sucesso'),
 ] 
 
-'''
-    path('', HomePageView.as_view(), name='home'),
-    path('noticias/resumo/',noticias_resumo,name='resumo'),
-    path('noticias/<int:noticia_id>/',noticia_detalhes,name='detalhes'),
-
-]
-'''
